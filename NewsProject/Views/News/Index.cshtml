@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@model List<News>
+    <div class="row">
+        <div class="col-4 ">
+            <img src="~/img/ads1.gif" class="img-thumbnail" alt="اینجا عکس است">
+            <img src="~/img/ads2.gif" class="img-thumbnail" alt="اینجا عکس است">
+            <img src="~/img/ads3.gif" class="img-thumbnail" alt="اینجا عکس است">
+        </div>
+        <div class="col-6 ">
+            <div>
+                <h1 class="text-center">مشروح اخبار</h1>
+                @foreach (var item in Model)
+                {
+                    <div class="card pt-2 text-right">
+                        <div class="card-header">
+                            @item.NewsTitle
+                        </div>
+                        <div class="card-body">
+                            @item.NewsText
+                        </div>
+                        <div class="card-footer">
+                            <a href="MoreAboutNews/edit/@item.NewsId">بیشتر بخوانید</a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="col-2 ">
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action"><span class="badge badge-warning">7</span>اقتصادی</a>
+                <a href="#" class="list-group-item list-group-item-action"><span class="badge badge-warning">7</span>ورزشی</a>
+                <a href="#" class="list-group-item list-group-item-action"><span class="badge badge-warning">7</span>سیاسی</a>
+            </div>
+        </div>
+    </div>
+
